@@ -62,3 +62,74 @@ footer{border-top:6px solid var(--br)}
 .sl{columns:2;column-gap:16px}
 #delivery .ic,#why .ic{background:#fdf0cc}
 .tb button{font-family:inherit}
+
+/* ================= RESPONSIVE (all phones / tablets / laptops) ================= */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+img,svg,video{max-width:100%}
+h1,h2,h3,p,li,td,th,a{overflow-wrap:anywhere}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+.hw{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+.tiles{grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr))}
+.st{grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr))}
+.mini{grid-template-columns:repeat(auto-fit,minmax(min(100%,120px),1fr))}
+button,.btn,a.btn{min-height:44px}
+
+/* large screens (27" / ultrawide) */
+@media(min-width:1500px){.w{max-width:1320px}body{font-size:16px}}
+
+/* laptop / small desktop: menu collapses earlier so nav never wraps */
+@media(max-width:1180px){.bg{display:block}.lk{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:12px 20px 18px;box-shadow:0 14px 24px -14px #0b3b2b55;max-height:calc(100vh - 80px);overflow-y:auto}.lk.o{display:flex}.lk a{padding:12px 14px}}
+
+/* tablets (iPad / Samsung Tab, 600-900px) */
+@media(max-width:900px){
+ .sec{padding:44px 0}
+ .hero{padding:36px 0 28px}
+ .two{grid-template-columns:1fr!important}
+}
+
+/* phones (Samsung / Redmi / Realme / iPhone, up to ~600px) */
+@media(max-width:600px){
+ body{font-size:14.5px;padding-bottom:96px}
+ .w{padding:0 14px}
+ .sec{padding:34px 0}
+ h1{font-size:1.65rem}h2{font-size:1.35rem}
+ .brand i{display:none}
+ .brand{font-size:.98rem}
+ .hero{padding:28px 0 22px}
+ .hero .btn,.sec .btn{width:100%;justify-content:center;margin-bottom:8px}
+ .strip{font-size:.8rem}
+ .card{padding:16px}
+ .pr{font-size:1.8rem}
+ .pk div{grid-template-columns:repeat(2,1fr)}
+ .qb{grid-template-columns:repeat(2,1fr)}
+ .tag{left:8px;right:8px;bottom:8px;padding:8px 10px;font-size:.74rem}
+ .ph{aspect-ratio:4/3}
+ .ph2{padding:30px 0 24px}
+ .cert{padding:16px}.cert dl div{flex-direction:column;gap:2px}.cert dd{text-align:left}
+ .tiles{grid-template-columns:repeat(2,1fr)}
+ .tile b{font-size:1.15rem}
+ .dsh{gap:12px}
+ .sb{padding:8px}.sb button{padding:9px 10px;font-size:.8rem}
+ .sl{columns:1}
+ .bar{padding:8px 14px calc(8px + env(safe-area-inset-bottom,0px));font-size:.75rem;gap:8px}
+ .bar .btn{width:auto;margin:0;padding:9px 14px;min-height:40px}
+ td,th{padding:8px 7px;font-size:.78rem}
+ input,textarea,select{font-size:16px} /* stops iPhone/Android zoom on focus */
+ footer{padding:30px 0 20px}
+}
+
+/* very small phones (320-360px) */
+@media(max-width:360px){
+ h1{font-size:1.45rem}
+ .tiles{grid-template-columns:1fr}
+ .lk .cta,.lk .lg{text-align:center}
+ .bar span{display:none}.bar .btn{width:100%}
+}
+
+/* landscape phones: don't let the fixed bar eat the screen */
+@media(max-height:480px) and (orientation:landscape){.bar{position:static}body{padding-bottom:0}nav{position:static}}
+
+/* accessibility */
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media(hover:none){.card:hover{transform:none}.btn:hover{transform:none}}
